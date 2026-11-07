@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <title>فيديوهات</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+        <body>
+          <!-- زر التبديل ويبدأ افتراضياً بإيموجي الشمس للوضع الفاتح -->
+<button id="theme-toggle" style="padding: 10px 20px; cursor: pointer; border-radius: 20px; border: 1px solid #ccc; font-size: 20px; background: #ffffff;">☀️</button> 
+        <h2 style="text-align: center;">الفيديوهات</h2>
+        <p style="text-align: center;">هذا هو قسم الفيديوهات التى اضع فيه الفيديوهات التى انشرها داخل المنصه</p>
+         <div style="text-align: center; width: 100%;">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uGQtN8xnbfA?si=PQgFY3IlxkcjTmy2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h4>فيديو قران </h4>
+         </div>
+         <pre>
+
+
+
+
+
+
+
+
+         
+               
+
+            
+            </pre>
+            <a href="index.html">العوده الى الصفحه الرئيسيه</a>
+            <hr>
+            <h3 align="right">الروابط السريعه</h3>
+        <div style="text-align: right; width: 100%;">
+<a href="https://wa.me/201040630335" target="_blank" style="display: inline-flex; align-items: center; background-color: #25D366; color: white; text-decoration: none; padding: 12px 24px; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; border-radius: 25px; box-shadow: 0px 4px 10px rgba(0,0,0,0.15);"></a>
+     واتساب
+</a> 
+</div> 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleButton = document.getElementById('theme-toggle');
+        
+        // 1. فحص التفضيل المحفوظ في المتصفح وتطبيقه فوراً عند فتح الصفحة
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            toggleButton.innerHTML = '🌙'; // إجبار الزر على التحول لقمر
+            toggleButton.style.background = '#333333';
+        } else {
+            document.body.classList.remove('dark-mode');
+            toggleButton.innerHTML = '☀️'; // إجبار الزر على التحول لشمس
+            toggleButton.style.background = '#ffffff';
+        }
+
+        // 2. حدث الضغط على الزر للتبديل الفوري بين الشمس والقمر
+        toggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.innerHTML = '🌙'; // تحويل الأيقونة لقمر عند تفعيل الوضع الداكن
+                toggleButton.style.background = '#333333';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                toggleButton.innerHTML = '☀️'; // تحويل الأيقونة لشمس عند تفعيل الوضع الفاتح
+                toggleButton.style.background = '#ffffff';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    });
+</script>
+ </body>
+ </html>
+        

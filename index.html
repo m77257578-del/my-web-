@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">      
+        <title>محمود مدحت</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <!-- زر التبديل بين الوضعين ويحتوي على رمز الشمس والقمر -->
+<button id="theme-toggle" style="padding: 10px 20px; cursor: pointer; border-radius: 20px; border: 1px solid #ccc; font-size: 20px; background-color: #ffffff;">☀️</button> 
+
+        <h1 style="text-align: center;">Mahmoud Medhat</h1>
+        <p style="text-align: center;">انا طالب فى الصف الاول الثانوى فى مدرسة الحامول الثانويه بنين واحب تطوير الويب</p>
+        <img src="my photo.png.jpeg" alt=" my photo" style="display: block; margin-left: auto; margin-right: auto; width: 300px;">
+        <hr>
+        <h3 style="text-align: center;">هذه هى اللغات التى استخدمها فى تحويل افكارى الى حقيقه</h3>
+        <table border="1" width="100%" style="text-align: center;">
+            <thead>
+            <tr bgcolor="red">
+                <td>js</td>
+                <td>html</td>
+                <td>css</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr bgcolor="yellow">
+                <td>javascript</td>
+                <td>hyper text markup language</td>
+                <td>cascading style sheets</td>
+        </tbody>
+        <tfoot>
+            <tr bgcolor="green">
+                <td><img src="js.png.jpeg" alt="js" width="100px"></td>
+                <td><img src="html.png.jpeg" alt="html" width="100px"></td>
+                <td><img src="css.png.jpeg" alt="css" width="100"></td>
+            </tr>
+        </tfoot>
+        </table>
+        <a href="video.html">الذهاب إلى قسم الفيديوهات</a>
+        <hr>
+        <h3 align="right">الروابط السريعه</h3>
+        <div style="text-align: right; width: 100%;">
+<a href="https://wa.me/201040630335" target="_blank" style="display: inline-flex; align-items: center; background-color: #25D366; color: white; text-decoration: none; padding: 12px 24px; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; border-radius: 25px; box-shadow: 0px 4px 10px rgba(0,0,0,0.15);">
+     واتساب
+</a> 
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleButton = document.getElementById('theme-toggle');
+        
+        // 1. فحص التفضيل المحفوظ في المتصفح وتطبيقه فوراً عند فتح الصفحة
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            toggleButton.innerHTML = '🌙'; // إجبار الزر على التحول لقمر
+            toggleButton.style.background = '#333333';
+        } else {
+            document.body.classList.remove('dark-mode');
+            toggleButton.innerHTML = '☀️'; // إجبار الزر على التحول لشمس
+            toggleButton.style.background = '#ffffff';
+        }
+
+        // 2. حدث الضغط على الزر للتبديل الفوري بين الشمس والقمر
+        toggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.innerHTML = '🌙'; // تحويل الأيقونة لقمر عند تفعيل الوضع الداكن
+                toggleButton.style.background = '#333333';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                toggleButton.innerHTML = '☀️'; // تحويل الأيقونة لشمس عند تفعيل الوضع الفاتح
+                toggleButton.style.background = '#ffffff';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    });
+</script>
+    </body>
+</html>
